@@ -1,0 +1,544 @@
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Sri & Ram | Wedding Invitation</title>
+
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: "Poppins", sans-serif;
+      background: #fff9f2;
+      color: #4a2630;
+      overflow-x: hidden;
+    }
+
+    /* ===== HERO ===== */
+
+    .hero {
+      min-height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+      padding: 40px 20px;
+      background:
+        radial-gradient(circle at top left, #ffd9df 0%, transparent 30%),
+        radial-gradient(circle at bottom right, #ffe6a8 0%, transparent 30%),
+        linear-gradient(135deg, #fffaf3, #fff0f3);
+    }
+
+    .hero::before,
+    .hero::after {
+      content: "✦";
+      position: absolute;
+      font-size: 100px;
+      color: rgba(170, 102, 45, 0.12);
+      animation: float 5s ease-in-out infinite;
+    }
+
+    .hero::before {
+      top: 8%;
+      left: 8%;
+    }
+
+    .hero::after {
+      bottom: 8%;
+      right: 8%;
+      animation-delay: 1.5s;
+    }
+
+    .invitation {
+      max-width: 850px;
+      width: 100%;
+      position: relative;
+      z-index: 2;
+      padding: 60px 30px;
+      border: 2px solid #d6a45c;
+      border-radius: 25px;
+      background: rgba(255, 255, 255, 0.72);
+      box-shadow: 0 25px 70px rgba(100, 55, 30, 0.12);
+    }
+
+    .invitation::before {
+      content: "";
+      position: absolute;
+      inset: 10px;
+      border: 1px solid rgba(190, 135, 62, 0.5);
+      border-radius: 18px;
+      pointer-events: none;
+    }
+
+    .top-symbol {
+      font-size: 42px;
+      color: #b27632;
+      margin-bottom: 15px;
+    }
+
+    .invite-text {
+      font-size: 15px;
+      letter-spacing: 4px;
+      text-transform: uppercase;
+      color: #9a6870;
+      font-weight: 500;
+    }
+
+    .title {
+      font-family: "Cormorant Garamond", serif;
+      font-size: clamp(60px, 12vw, 105px);
+      font-weight: 600;
+      line-height: 0.9;
+      color: #7e273d;
+      margin: 20px 0;
+    }
+
+    .ampersand {
+      font-size: 0.55em;
+      color: #c28a42;
+      vertical-align: middle;
+      font-style: italic;
+    }
+
+    .subtitle {
+      font-family: "Cormorant Garamond", serif;
+      font-size: 27px;
+      color: #76505a;
+      margin-bottom: 30px;
+    }
+
+    .date {
+      display: inline-block;
+      padding: 12px 25px;
+      border-top: 1px solid #cfa15b;
+      border-bottom: 1px solid #cfa15b;
+      font-size: 18px;
+      font-weight: 500;
+      letter-spacing: 2px;
+      color: #7e273d;
+    }
+
+    .venue {
+      margin-top: 25px;
+      font-family: "Cormorant Garamond", serif;
+      font-size: 28px;
+      font-weight: 600;
+      color: #9b5d29;
+    }
+
+    .time {
+      margin-top: 5px;
+      color: #76505a;
+      font-size: 16px;
+    }
+
+    .scroll {
+      margin-top: 40px;
+      font-size: 12px;
+      letter-spacing: 3px;
+      color: #9a6870;
+    }
+
+    /* ===== DETAILS ===== */
+
+    .details {
+      padding: 90px 20px;
+      text-align: center;
+      background: #fff;
+    }
+
+    .section-title {
+      font-family: "Cormorant Garamond", serif;
+      font-size: 48px;
+      color: #7e273d;
+      margin-bottom: 10px;
+    }
+
+    .section-subtitle {
+      color: #896d74;
+      margin-bottom: 45px;
+    }
+
+    .cards {
+      max-width: 1000px;
+      margin: auto;
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 25px;
+    }
+
+    .card {
+      padding: 35px 20px;
+      border-radius: 20px;
+      background: #fffaf4;
+      border: 1px solid #ecd4b0;
+      transition: 0.3s;
+    }
+
+    .card:hover {
+      transform: translateY(-8px);
+      box-shadow: 0 15px 35px rgba(100, 55, 30, 0.12);
+    }
+
+    .card-icon {
+      font-size: 38px;
+      margin-bottom: 15px;
+    }
+
+    .card h3 {
+      font-family: "Cormorant Garamond", serif;
+      font-size: 29px;
+      color: #7e273d;
+      margin-bottom: 8px;
+    }
+
+    .card p {
+      color: #765e64;
+      line-height: 1.8;
+    }
+
+    /* ===== MESSAGE ===== */
+
+    .message {
+      padding: 100px 20px;
+      text-align: center;
+      background:
+        linear-gradient(135deg, #fff0f3, #fff8e9);
+    }
+
+    .message-box {
+      max-width: 750px;
+      margin: auto;
+    }
+
+    .message-box .quote {
+      font-family: "Cormorant Garamond", serif;
+      font-size: 30px;
+      line-height: 1.6;
+      color: #6e3946;
+    }
+
+    .hearts {
+      color: #b27632;
+      font-size: 25px;
+      margin: 20px;
+    }
+
+    /* ===== RSVP ===== */
+
+    .rsvp {
+      padding: 80px 20px;
+      text-align: center;
+      background: #7e273d;
+      color: white;
+    }
+
+    .rsvp h2 {
+      font-family: "Cormorant Garamond", serif;
+      font-size: 48px;
+    }
+
+    .rsvp p {
+      margin: 15px auto 30px;
+      max-width: 600px;
+      color: #f9e8eb;
+      line-height: 1.8;
+    }
+
+    .button {
+      display: inline-block;
+      padding: 13px 30px;
+      background: #e1b56c;
+      color: #54202d;
+      text-decoration: none;
+      border-radius: 50px;
+      font-weight: 600;
+      transition: 0.3s;
+    }
+
+    .button:hover {
+      background: #f2ce91;
+      transform: translateY(-3px);
+    }
+
+    /* ===== FOOTER ===== */
+
+    footer {
+      padding: 25px;
+      text-align: center;
+      background: #4e1826;
+      color: #e6cfd3;
+      font-size: 13px;
+    }
+
+    footer strong {
+      color: #e1b56c;
+    }
+
+    /* ===== ANIMATION ===== */
+
+    @keyframes float {
+      0%, 100% {
+        transform: translateY(0) rotate(0deg);
+      }
+
+      50% {
+        transform: translateY(-20px) rotate(10deg);
+      }
+    }
+
+    /* ===== MOBILE ===== */
+
+    @media (max-width: 700px) {
+
+      .hero {
+        padding: 25px 15px;
+      }
+
+      .invitation {
+        padding: 50px 18px;
+      }
+
+      .invite-text {
+        font-size: 11px;
+        letter-spacing: 2px;
+      }
+
+      .title {
+        font-size: 65px;
+      }
+
+      .subtitle {
+        font-size: 21px;
+      }
+
+      .date {
+        font-size: 14px;
+        padding: 10px 15px;
+      }
+
+      .venue {
+        font-size: 24px;
+      }
+
+      .cards {
+        grid-template-columns: 1fr;
+      }
+
+      .section-title {
+        font-size: 40px;
+      }
+
+      .message-box .quote {
+        font-size: 24px;
+      }
+
+      .rsvp h2 {
+        font-size: 40px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- ================= HERO ================= -->
+
+  <section class="hero">
+
+    <div class="invitation">
+
+      <div class="top-symbol">
+        ❦
+      </div>
+
+      <div class="invite-text">
+        Together with their families
+      </div>
+
+      <div class="subtitle">
+        Request the pleasure of your presence at their wedding
+      </div>
+
+      <h1 class="title">
+        Sri
+        <span class="ampersand">&</span>
+        Ram
+      </h1>
+
+      <div class="date">
+        01 • 10 • 2026
+      </div>
+
+      <div class="venue">
+        KTR Grand
+      </div>
+
+      <div class="time">
+        7:30 PM
+      </div>
+
+      <div class="scroll">
+        ✦ A NEW CHAPTER BEGINS ✦
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- ================= DETAILS ================= -->
+
+  <section class="details">
+
+    <h2 class="section-title">
+      Save the Date
+    </h2>
+
+    <p class="section-subtitle">
+      Join us as we celebrate love, laughter and a beautiful new beginning.
+    </p>
+
+    <div class="cards">
+
+      <div class="card">
+
+        <div class="card-icon">
+          📅
+        </div>
+
+        <h3>
+          Date
+        </h3>
+
+        <p>
+          Thursday<br>
+          <strong>1st October 2026</strong>
+        </p>
+
+      </div>
+
+
+      <div class="card">
+
+        <div class="card-icon">
+          🕢
+        </div>
+
+        <h3>
+          Time
+        </h3>
+
+        <p>
+          Wedding Ceremony<br>
+          <strong>7:30 PM</strong>
+        </p>
+
+      </div>
+
+
+      <div class="card">
+
+        <div class="card-icon">
+          📍
+        </div>
+
+        <h3>
+          Venue
+        </h3>
+
+        <p>
+          <strong>KTR Grand</strong><br>
+          We look forward to celebrating with you.
+        </p>
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- ================= MESSAGE ================= -->
+
+  <section class="message">
+
+    <div class="message-box">
+
+      <div class="hearts">
+        ♥ ♥ ♥
+      </div>
+
+      <div class="quote">
+        "Two hearts, two lives, and one beautiful journey
+        beginning together."
+      </div>
+
+      <div class="hearts">
+        ✦
+      </div>
+
+      <p>
+        Your presence and blessings will make our special day
+        even more memorable.
+      </p>
+
+    </div>
+
+  </section>
+
+
+  <!-- ================= RSVP ================= -->
+
+  <section class="rsvp">
+
+    <h2>
+      We Can't Wait to Celebrate!
+    </h2>
+
+    <p>
+      Come join Sri & Ram as they begin their journey together.
+      Your presence will make this celebration truly special.
+    </p>
+
+    <!-- Replace the # with your RSVP link if needed -->
+    <a href="#" class="button">
+      ♥ With Love, Sri & Ram
+    </a>
+
+  </section>
+
+
+  <!-- ================= FOOTER ================= -->
+
+  <footer>
+
+    <p>
+      Made with ♥ for
+      <strong>Sri & Ram</strong>
+    </p>
+
+    <p>
+      01 October 2026 • 7:30 PM • KTR Grand
+    </p>
+
+  </footer>
+
+</body>
+</html>
+```
